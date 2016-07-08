@@ -1,0 +1,34 @@
+{
+  "name": "color-prefix-stream",
+  "version": "0.0.1",
+  "description": "Add a color and a prefix to each line in a stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/color-prefix-stream.git"
+  },
+  "keywords": [
+    "color",
+    "prefix",
+    "split",
+    "stream"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcollina/color-prefix-stream/issues"
+  },
+  "homepage": "https://github.com/mcollina/color-prefix-stream#readme",
+  "devDependencies": {
+    "pre-commit": "^1.1.3",
+    "proxyquire": "^1.7.10",
+    "standard": "^7.1.2",
+    "tap": "^6.1.1"
+  },
+  "dependencies": {
+    "split2": "^2.1.0"
+  }
+}
