@@ -15,7 +15,7 @@ test('add a prefix', (t) => {
   instance.end(new Buffer('a line'))
 
   instance.on('data', (line) => {
-    t.equal(line, chalk.stripColor('abcde: a line'))
+    t.equal(line, 'abcde: a line\n')
   })
 })
 
@@ -30,7 +30,7 @@ test('add a prefix and changes the separator', (t) => {
   instance.end(new Buffer('a line'))
 
   instance.on('data', (line) => {
-    t.equal(line, chalk.stripColor('another - a line'))
+    t.equal(line, chalk.stripColor('another - a line\n'))
   })
 })
 
@@ -60,5 +60,17 @@ test('rotates the color', (t) => {
 
   instance.on('data', (line) => {
     t.ok(chalk.hasColor(line))
+  })
+})
+
+test('no prefix, no separator', (t) => {
+  t.plan(1)
+
+  const instance = prefixer({ color: 'red' })
+
+  instance.end(new Buffer('a line'))
+
+  instance.on('data', (line) => {
+    t.equal(chalk.stripColor(line), 'a line\n')
   })
 })
